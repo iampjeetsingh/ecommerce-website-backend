@@ -6,7 +6,9 @@ const cors = require("cors");
 const express = require("express");
 const app = express();
 
+// My Routes
 const authRoutes = require("./routes/auth")
+const userRoutes = require("./routes/user")
 
 const port = process.env.PORT || 8000;
 
@@ -28,6 +30,7 @@ app.use(cors());
 
 // My Routes
 app.use("/api", authRoutes);
+app.use("/api", userRoutes);
 
 // Starting a server
 app.listen(port, ()=>{
